@@ -16,26 +16,41 @@
   
   <div class="welcome">
     <h1>This is your<strong> To Do List!</strong></h1>
-    <p>On This Site you can update what things you want to get done first and delete the completed one</p>
+    <p>On This Site you can update what things you want to get done first and check the completed one</p>
   </div>
 
-  <div class="question">
-    <h4>Question 1</h4>
-    <h2>I like participating in physical activity such as running, swimming, or biking.</h2>
 
-    <div class="answer">
-      <h3>Disagree</h3>
-    </div>
+  <form id="todoForm">
+      <h1>To Do List:<h1>
+        <input id="todoInput">
+        <button type="button" onclick="todoList()">Add to List</button>
+    </form>
+    <ul id="todoList">
+    </ul>
 
-    <div class="answer">
-      <h3>Neutral</h3>
-    </div>
-
-    <div class="answer">
-      <h3>Agree</h3>
-    </div>
-  </div>
-
-<footer><h3>Good luck and get the list done!	!<h3>
+<footer><h3>Good luck and get the list done!!<h3>
 </body>
+<script>
+
+function todoList() {
+  	var list = document.getElementById('todoInput').value;
+  	var inputan = document.createTextNode(list);
+  	
+  	var checkbox = document.createElement('input');
+  		checkbox.type = "checkbox";
+  		checkbox.name = "name";
+  		checkbox.value = "value";
+
+  	var newInputan = document.createElement("div");
+  		newInputan.appendChild(checkbox);
+ 	 	newInputan.appendChild(inputan);
+  document.getElementById("todoList").appendChild(newInputan)
+}
+
+
+	// function delete()
+	// {
+
+	// }
+	</script>
 </html>
